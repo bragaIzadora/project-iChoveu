@@ -128,5 +128,4 @@ export async function handleSearch(event) {
       citiesList.appendChild(element);
     });
   }
-  // seu código aqui
 }
