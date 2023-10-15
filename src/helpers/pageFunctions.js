@@ -117,16 +117,15 @@ export async function handleSearch(event) {
   const searchInput = document.getElementById('search-input');
   const searchValue = searchInput.value;
   const cities = await searchCities(searchValue);
+  const citiesList = document.getElementById('cities');
 
   if (cities && cities.length > 0) {
     const promises = cities.map((city) => getWeatherByCity(city.url));
     const promisesData = await Promise.all(promises);
 
-    const citiesList = document.getElementById('cities');
-
     promisesData.forEach((cityData) => {
-      const cityElement = createCityElement(cityData);
-      citiesList.appendChild(cityElement);
+      const element = createCityElement(cityData);
+      citiesList.appendChild(element);
     });
   }
   // seu código aqui
