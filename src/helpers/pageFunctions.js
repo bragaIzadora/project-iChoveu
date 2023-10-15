@@ -120,7 +120,14 @@ export async function handleSearch(event) {
 
   if (cities && cities.length > 0) {
     const promises = cities.map((city) => getWeatherByCity(city.url));
-    await Promise.all(promises);
+    const promisesData = await Promise.all(promises);
+
+    const citiesList = document.querySelector('#cities');
+
+    promisesData.forEach((cityData) => {
+      const cityElement = createCityElement(cityData);
+      citiesList.appendChild(cityElement);
+    });
   }
   // seu código aqui
 }
