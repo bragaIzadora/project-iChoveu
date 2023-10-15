@@ -122,7 +122,7 @@ export async function handleSearch(event) {
     const promises = cities.map((city) => getWeatherByCity(city.url));
     const promisesData = await Promise.all(promises);
 
-    const citiesList = document.querySelector('#cities');
+    const citiesList = document.getElementById('cities');
 
     promisesData.forEach((cityData) => {
       const cityElement = createCityElement(cityData);
