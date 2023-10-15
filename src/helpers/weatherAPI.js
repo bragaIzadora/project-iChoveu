@@ -7,10 +7,9 @@ export const searchCities = async (term) => {
     const data = response.json();
     return data;
   }
-  // if (data.length === 0) {
-  //   window.alert('Nenhuma cidade encontrada');
-  // }
-  //   seu código aqui
+  if (data.length === 0) {
+    window.alert('Nenhuma cidade encontrada');
+  }
 };
 
 export const getWeatherByCity = (/* cityURL */) => {
