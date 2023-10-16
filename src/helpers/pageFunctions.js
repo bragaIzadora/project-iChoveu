@@ -103,8 +103,6 @@ export function createCityElement(cityInfo) {
   infoContainer.appendChild(tempContainer);
   infoContainer.appendChild(iconElement);
 
-  cityElement.appendChild(headingElement);
-  cityElement.appendChild(infoContainer);
   const button = document.createElement('button', 'ver-previsao-button');
   button.innerText = 'Ver previsão';
   button.setAttribute('data-url', url);
